@@ -1,0 +1,102 @@
+/* Apply a basic reset to remove default browser styles */
+body, h1, p, input, button {
+    margin: 0;
+    padding: 0;
+    border: none;
+    font-family: Arial, sans-serif;
+}
+
+/* Add some spacing and styling to the form elements */
+form {
+    margin: 20px;
+}
+
+div {
+    margin-bottom: 15px;
+    display: flex; /* Use flex display for horizontal alignment */
+    align-items: center; /* Vertically align items */
+}
+
+input[type="text"] {
+    padding: 10px;
+    border: 2px solid grey; /* Light Green */
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+button {
+    padding: 12px 24px; /* Increased padding */
+    background-color: #4CAF50; /* Light Green */
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.25s ease;
+    font-size: 16px; /* Increased font size */
+}
+
+button:disabled {
+    background-color: #999; /* Gray for Disabled Button */
+    cursor: not-allowed;
+}
+
+/* Add some separation between input and button */
+div input[type="text"],
+div button {
+    margin-right: 10px;
+}
+
+/* Add animations to the buttons */
+button:enabled:hover {
+    background-color: #45a049; /* Slightly Darker Green on Hover */
+}
+
+/* Add fade-in animation to the form elements */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+div, button:enabled {
+    animation: fadeIn 0.25s ease-out;
+}
+
+/* Add a simple slide-in animation for the messages */
+@keyframes slideIn {
+    from {
+        transform: translateX(-10%);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
+
+p {
+    animation: slideIn 0.25s ease-out;
+    font-size: 24px; /* Increased font size for results */
+    margin-left: 20px; /* Add margin between input and results */
+    white-space: nowrap; /* Prevent line breaks */
+    display: inline-block; /* Display inline with the inputs */
+}
+
+/* Style error messages */
+p.ng-error {
+    color: #d9534f;
+    margin-top: 5px;
+    font-size: 14px;
+    animation: fadeIn 0.25s ease-out;
+}
+
+.result-message {
+    animation: fadeIn 0.25s ease-out;
+    font-size: 24px;
+    margin-left: 20px;
+    white-space: nowrap;
+    display: inline-block;
+}

@@ -1,0 +1,31 @@
+<form #numform="ngForm">
+	<div>
+		<input type="text" placeholder="Enter a number" name="numericInput1" [(ngModel)]="currentNumber" pattern="[0-9]*" required>
+		<p class="ng-error" *ngIf="numform.controls['numericInput1']?.invalid && (numform.controls['numericInput1']?.dirty)">
+			Please enter a valid number.
+		</p>
+	</div>
+	<div>
+		<input type="text" placeholder="Enter a number to add" name="numericInput2" [(ngModel)]="currentNumberToAdd" pattern="^[0-9]*$">
+		<button (click)="submitNumbersClicked()"
+			[disabled]="numform.invalid || (numform.controls['numericInput2'].invalid && numform.controls['numericInput2'].dirty)">
+			Add (default ten)
+		</button>
+		<p class="ng-error"
+			*ngIf="numform.controls['numericInput2']?.invalid && (numform.controls['numericInput2']?.dirty) && currentNumberToAdd">
+			Please enter a valid number.
+		</p>
+	</div>
+</form>
+
+<p class="result-message" *ngIf="numberMessage">{{ numberMessage.result }}</p>
+
+<form #nameform="ngForm">
+	<div>
+		<input type="text" placeholder="Enter your name" name="nameInput" [(ngModel)]="currentName" pattern="[a-zA-Z]*" required>
+
+		<button (click)="submitNameClicked()">Greet</button>
+	</div>
+</form>
+
+<p class="result-message" *ngIf="nameMessage">{{ nameMessage.message }}</p>
