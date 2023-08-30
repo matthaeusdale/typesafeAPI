@@ -1,3 +1,6 @@
+## Description 
+This project functions as a proof of concept aimed at bolstering API reliability and security through the implementation of API request validation using Ajv. The primary objective was to generate JSON validation schema from interfaces that are shared between the Angular app and the Express backend. Requests that could usually have unexpected formatting now conform to strict TypeScript compile-time checking, streamlining development in a type-safe environment. This schema also added an additional layer of validation to incoming requests, completely preventing malformed or malicious endpoint requests.
+
 ## Project Setup
 First, install ```npm``` if you don't have it already.
 
